@@ -1,0 +1,23 @@
+batch_size: 64
+test_portion: 0.2
+num_workers: 1
+input_shape: (1,1100,1300)
+
+epochs: 100
+
+learning_rate: 3e-4
+weight_decay: 10e-6
+
+gather_step: 5
+eval_step: 5
+
+model:
+  in_channels: 1
+  cifar: False
+  out_dim: 256
+  backbone: "resnet"
+  size: 50
+  pretrained: False
+
+loss:
+  temperature: 0.5

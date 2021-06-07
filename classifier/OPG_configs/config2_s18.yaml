@@ -1,0 +1,33 @@
+# working config --> make sure to put the old annotation file!
+
+model:
+  name: 'ResNetXIn'
+  in_channels: 1
+  cifar: False
+  size: 18
+  n_classes: 3
+  pretrained: False
+
+dataset:
+  name: 'OPG'
+  dset_dir: '../../molar_detection/data/annotated/patches/images_nmasks'
+  #csv_file: '../../molar_detection/data/annotated/annotations/all/cv1/train_annotations.csv'
+  csv_file: '../../code_joao/annotations.csv'
+  considered_class: 2
+  ROI_size: 256
+  batch_size: 32
+  test_portion: 0.2
+  num_workers: 1
+
+optimizer:
+  learning_rate: 1e-4
+  weight_decay: 1e-1
+
+general:
+  epochs: 100
+  gather_step: 1
+  eval_step: 1
+  cuda: True
+  exp_name: 'molar2_s18'
+  ckpt_name: None
+  weights: None

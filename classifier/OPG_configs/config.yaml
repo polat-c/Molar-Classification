@@ -1,0 +1,30 @@
+model:
+  name: 'ResNet_custom'
+  in_channels: 1
+  cifar: False
+  size: 50
+  n_classes: 3
+  pretrained: False
+
+dataset:
+  name: 'OPG'
+  dset_dir: '../../molar_detection/data/annotated/patches/images_nmasks'
+  csv_file: '../../molar_detection/data/annotated/annotations/all/cv1/train_annotations.csv'
+  considered_class: 1
+  ROI_size: 256
+  batch_size: 64
+  test_portion: 0.2
+  num_workers: 1
+
+optimizer:
+  learning_rate: 1e-1
+  weight_decay: 5e-4
+
+general:
+  epochs: 100
+  gather_step: 1
+  eval_step: 1
+  cuda: True
+  exp_name: 'molar0'
+  ckpt_name: 'best' ## this is normally None
+  weights: None
